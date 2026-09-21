@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-axiom: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+body {
+  @apply bg-axiom-dark text-white antialiased;
+}
+
+.orbit-ring {
+  position: absolute;
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 164, 255, 0.35);
+  animation: spin 24s linear infinite;
+}
+.orbit-ring::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: #00A4FF;
+  box-shadow: 0 0 20px #00A4FF;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
